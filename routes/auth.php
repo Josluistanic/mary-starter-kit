@@ -1,21 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Livewire\Volt\Volt;
 
-Route::middleware('guest')->group(function(){
-    Volt::route('login','auth.login')->name('login');    
-    Volt::route('register','auth.register')->name('register');
-    // Volt::route('forgot-password','auth.forgot-password')->name('forgot-password');
-    // Volt::route('reset-password','auth.reset-password')->name('reset-password');
+Route::middleware('guest')->group(function () {
+    Route::livewire('/login', 'pages::login')->name('login');
+    Route::livewire('/register', 'pages::register')->name('register');
+    // Route::livewire('/forgot-password','auth.forgot-password')->name('forgot-password');
+    // Route::livewire('/reset-password','auth.reset-password')->name('reset-password');
 });
 
-Route::middleware('auth')->group(function(){
-    Route::get('logout',function(){
+Route::middleware('auth')->group(function () {
+    Route::get('/logout', function () {
         auth()->logout();
         request()->session()->invalidate();
         request()->session()->regenerateToken();
 
         return redirect('/');
     })->name('logout');
+
+    Route::livewire('/', 'pages::dashboard')->name('dashboard');
+    // Route::get('/', function () {
+    //     return '<h1>Welcome ' . auth()->user()->name . '</h1>';
+    // });
 });
