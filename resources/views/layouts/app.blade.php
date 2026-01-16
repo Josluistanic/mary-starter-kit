@@ -23,8 +23,8 @@
 
         {{-- Right side actions --}}
         <x-slot:actions>
-            <x-button label="Messages" icon="o-envelope" link="###" class="btn-ghost btn-sm" responsive />
-            <x-button label="Notifications" icon="o-bell" link="###" class="btn-ghost btn-sm" responsive />
+            <x-button label="Logout" icon="o-power" link="/logout" class="btn-ghost btn-sm" responsive
+                no-wire-navigate />
         </x-slot:actions>
     </x-nav>
 
@@ -37,21 +37,10 @@
                     <x-slot:avatar>
                         <x-avatar placeholder="{{ substr($user->name, 0, 1) }}" alt="My image" class="!w-10" />
                     </x-slot:avatar>
-                    <x-slot:actions>
-                        <x-button icon="o-power" class="btn-circle btn-ghost btn-sm" link="/logout" tooltip-left="logout"
-                            no-wire-navigate />
-                    </x-slot:actions>
                 </x-list-item>
             @endif
 
-            <x-menu activate-by-route>
-                <x-menu-item title="Home" icon="o-home" link="###" />
-                <x-menu-item title="Messages" icon="o-envelope" link="###" />
-                <x-menu-sub title="Settings" icon="o-cog-6-tooth">
-                    <x-menu-item title="Wifi" icon="o-wifi" link="####" />
-                    <x-menu-item title="Archives" icon="o-archive-box" link="####" />
-                </x-menu-sub>
-            </x-menu>
+            <x-sidebar />
         </x-slot:sidebar>
 
         <x-slot:content>
