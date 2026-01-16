@@ -2,6 +2,8 @@
 
 A lightweight Laravel starter kit with authentication and basic functionality, built with [MaryUI](https://mary-ui.com) and [Livewire](https://livewire.laravel.com). Similar to official Laravel starter kits (Breeze with Vue, React, or Livewire), but designed specifically for MaryUI.
 
+> Personally, I clone this repository when I need to create a lightweight app. 
+
 ## Features
 
 This starter kit provides a complete authentication system and user profile management, all built with MaryUI components and Livewire.
