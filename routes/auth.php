@@ -19,7 +19,4 @@ Route::middleware('auth')->group(function () {
     })->name('logout');
 
     Route::livewire('/', 'pages::dashboard')->name('dashboard');
-    // Route::get('/', function () {
-    //     return '<h1>Welcome ' . auth()->user()->name . '</h1>';
-    // });
 });
